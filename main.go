@@ -16,7 +16,11 @@ func main() {
 	r := gin.Default()
 
 	//Routes
+	//Post
 	r.GET("/posts", controllers.PostsIndex)
+	r.GET("/posts/:id", controllers.PostsShow)
+	r.PUT("/posts/:id", controllers.PostUpdate)
+	r.DELETE("/posts/:id", controllers.PostDelete)
 	r.POST("/posts", controllers.PostsCreate)
 
 	r.Run()
